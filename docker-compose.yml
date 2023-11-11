@@ -1,24 +1,26 @@
 version: '3.8'
 
-# API
 services:
-  # image: ./express
+  # API
   backend:
+    container_name: express
+    image: express:local
     build:
       context: ./express
       dockerfile: Dockerfile
+    volumes:
+      - ./src:/express
     ports: 
       - 8080:8080
-# CLIENT
-  app:
+  # CLIENT
+  frontend:
     container_name: react-app
-    image: react-app
+    image: react-app:local
     build:
       context: ./react-app
       # target: development
       dockerfile: Dockerfile
     volumes:
-      # - ./src:/app/src
        - ./src:/react-app/src
     ports:
       - 3000:3000

@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:14-alpine
 EXPOSE 8080
 WORKDIR /home/node
 COPY package.json .

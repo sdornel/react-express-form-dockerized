@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:14-alpine
 ENV PATH /app/node_modules/.bin:$PATH
 # Add a work directory
 WORKDIR /app
